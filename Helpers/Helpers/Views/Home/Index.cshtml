@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+
+@model Helpers.Models.HomeModel
+
+<!DOCTYPE html>
+<html>
+    <body>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <p>
+                @Html.LabelFor(m => m.Username)<br />
+                @Html.TextBoxFor(m => m.Username)
+            </p>
+            <p>
+                @Html.LabelFor(m => m.LastName)<br />
+                @Html.TextBox("LastName", Model.LastName)
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Password)<br />
+                @Html.PasswordFor(m => m.Password)
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Country)
+                @Html.DropDownListFor(m => m.Country, new SelectList(Model.AvailableCountries), "Select One")
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Comments)
+                @Html.TextAreaFor(m => m.Comments)
+            </p>
+            <p>
+                @Html.LabelFor(m => m.IsActive)
+                @Html.CheckBoxFor(m => m.IsActive)
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Avatar)
+                @Html.TextBoxFor(m => m.Avatar, new { type = "file", accept = "image/*" })
+            </p>
+            <p>
+                <label for="IsMale">Male</label>
+                @Html.RadioButtonFor(m => m.IsMale, true, new { Id = "IsMale" })
+                <label for="IsFemale">Female</label>
+                @Html.RadioButtonFor(m => m.IsMale, false, new { Id = "IsFemale" })
+            </p>
+        }
+    </body>
+</html>
