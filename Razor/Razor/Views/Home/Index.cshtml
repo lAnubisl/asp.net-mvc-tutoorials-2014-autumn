@@ -9,21 +9,21 @@
 </head>
 <body>
     <div>
-        Hello Username. Durrent Date is @DateTime.Now.ToShortDateString() Current time is @DateTime.Now.ToShortTimeString()
+        Hello Username. Current Date is @DateTime.Now.ToShortDateString() Current time is @DateTime.Now.ToShortTimeString()
     </div>
 
     <table>
         @for (var i = 1; i <= 7; i++)
         {
             <tr>
-                <td>@i</td>
+                <td>@(i - 1)</td>
                 <td>@(7 - i)</td>
                 <td>@DateTime.Now.Date.AddDays(i).ToShortDateString()</td>
                 <td>@DateTime.Now.Date.AddDays(i).DayOfWeek</td>
             </tr>
         }
     </table>
-
+@*
     @{ var messageFromSpace = "Hello from outer space."; }
     @{ var messageFromEarth = "Hello aliens. We hope you came with peace."; }
 
@@ -31,7 +31,7 @@
     <p style="color:green;">@messageFromEarth</p>
 
     @{
-        var messageFromMenInBlack = "This is men in black. Today " + DateTime.Now.Date.ToShortDateString() + " our cosmoport is closed. Please visit us next time.";
+        var messageFromMenInBlack = "This is men in black. Today " + DateTime.Now + " our cosmoport is closed. Please visit us next time.";
         var messageFromObama = @"Sorry aliens. Men in black said ""our cosmoport is closed""";
     }
 
@@ -39,10 +39,10 @@
     <p style="color:blue">@messageFromObama</p>
 
     @{ var messageHTML = "<p>this is a HTML message</p>"; }
-    <p>@messageHTML;</p>
+    <span>@messageHTML</span>
 
-
-    @*This is a comment*@
-    
+    <span>@Html.Raw(messageHTML)</span>
+    <!-- This is also a comment  -->
+    This is a comment*@
 </body>
 </html>
