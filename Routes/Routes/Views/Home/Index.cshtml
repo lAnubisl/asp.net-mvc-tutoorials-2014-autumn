@@ -1,0 +1,40 @@
+﻿@model Routes.Models.ArticleModel
+<div class="wrap-article">
+    <h2>@Model.Title</h2>
+    <p class="date"><span>@Model.Date.ToString("D")</span><span>@Model.Date.ToString("hh:mm")</span></p>
+    <div class="text-block">
+        @Html.Raw(Model.Body)
+    </div>
+</div>
+<div class="wrap-soc-list">
+    <ul>
+        @foreach (var item in Model.Likes)
+        {
+            <li><a href="#"><img src="~/Content/images/fc-ico.png" alt="" /><span>@item.LikesCount</span></a></li>
+        }
+    </ul>
+</div>
+<div class="wrap-comments">
+    <h2>Comments</h2>
+    <ul class="list-comment">
+        @foreach (var item in Model.Comments)
+        {
+            <li>
+                <div class="avatar"><img src="~/Content/images/avatar-comment.png" alt="" /></div>
+                <div class="comment-text">
+                    <a href="#">@item.Username</a>
+                    <p class="date"><span>@item.Date.ToString("D")</span><span>@item.Date.ToString("hh:mm")</span></p>
+                    <p>@item.Body</p>
+                </div>
+            </li>
+        }
+    </ul>
+    <div class="add-comment">
+        <textarea name="" placeholder="Your comment" class="txt-area"></textarea>
+        <div class="wrap-btn">
+            <button class="btn-cancel">Cancel</button>
+            <button class="btn-save">Save changes</button>
+            <p>Lorem ipsum dolor sit amet, <a href="#">adipiscing</a></p>
+        </div>
+    </div>
+</div>

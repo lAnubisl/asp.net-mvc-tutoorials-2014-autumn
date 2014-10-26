@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+@model Routes.Models.RecentDataModel
+<div class="posts-wrap color">
+    <h3>Recent Comments</h3>
+    <ul>
+        @foreach (var item in Model.Items)
+        {
+            <li>
+                <p class="date">@item.Date.ToString("D") <span>@item.Date.ToString("hh:mm")</span></p>
+                <p class="post">
+                    <a href="/Comment/ById/@item.ID">@item.Text</a>
+                    @*<a href="@Url.Action("ById", "Comment", new {id = item.ID})">@item.Text</a>*@
+                    @*@Html.ActionLink(item.Text, "ById", "Comment", new { id= item.ID }, null)*@
+                    @*<a href="@Url.RouteUrl("default", new { controller = "Comment", action = "ById", id = item.ID })">@item.Text</a>*@
+                    @*@Html.RouteLink(item.Text, "default", new { controller = "Comment", action = "ById", id = item.ID })*@
+                </p>
+            </li>
+        }
+    </ul>
+</div>
