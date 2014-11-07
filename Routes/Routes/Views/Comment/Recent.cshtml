@@ -11,11 +11,11 @@
             <li>
                 <p class="date">@item.Date.ToString("D") <span>@item.Date.ToString("hh:mm")</span></p>
                 <p class="post">
-                    <a href="/Comment/ById/@item.ID">@item.Text</a>
-                    @*<a href="@Url.Action("ById", "Comment", new {id = item.ID})">@item.Text</a>*@
-                    @*@Html.ActionLink(item.Text, "ById", "Comment", new { id= item.ID }, null)*@
-                    @*<a href="@Url.RouteUrl("default", new { controller = "Comment", action = "ById", id = item.ID })">@item.Text</a>*@
-                    @*@Html.RouteLink(item.Text, "default", new { controller = "Comment", action = "ById", id = item.ID })*@
+                    
+                    @*<a href="@Url.Action("ById", "Comment", new {id = item.ID})">Hello!!!!</a>*@
+                    @Html.ActionLink("World!!!!!", "ById", "Comment", new { id = item.ID }, null)
+                    @*<a href="@Url.RouteUrl("default1", new { controller = "Comment", action = "ById", id = item.ID })">@item.Text</a>*@
+                    @*@Html.RouteLink("Hello from Mars", "article", new { seoUrl = item.Text })*@
                 </p>
             </li>
         }

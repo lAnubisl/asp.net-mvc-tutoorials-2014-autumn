@@ -25,7 +25,7 @@
                 <input type="text" />
                 <button></button>
             </div>
-            @Html.Action("Recent", "Article")
+            @Html.Action("Recent", "Article", new { area = "admin" })
             @Html.Action("Recent", "Comment")
         </div>
         <div class="right-column">

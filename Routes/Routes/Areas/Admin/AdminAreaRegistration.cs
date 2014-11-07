@@ -4,7 +4,7 @@ namespace TemplateTest.Areas.Admin
 {
     public class AdminAreaRegistration : AreaRegistration
     {
-        private static readonly string[] Namespaces = new[] { "Routes.Areas.Admin.Controllers" };
+        private static readonly string[] Namespaces = new[] { "Routes.Areas.Admin.Controllers", "Routes.Controllers" };
 
         public override string AreaName
         {

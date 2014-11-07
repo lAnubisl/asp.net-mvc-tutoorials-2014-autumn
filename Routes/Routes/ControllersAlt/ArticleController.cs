@@ -7,6 +7,7 @@ using Routes.Models;
 
 namespace Routes.Controllers
 {
+    [RouteArea("Admin")]
     [RoutePrefix("Article")]
     public class ArticleController : Controller
     {

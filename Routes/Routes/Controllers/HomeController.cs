@@ -9,11 +9,11 @@ namespace Routes.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            var model = new ArticleModel();
-            return View(model);
-        }
+        //public ActionResult Index()
+        //{
+        //    var model = new ArticleModel();
+        //    return View(model);
+        //}
 
         //public ActionResult Index(int? id)
         //{
@@ -21,7 +21,7 @@ namespace Routes.Controllers
         //    return View(model);
         //}
 
-        //public ActionResult Index(int id = 0)
+        //public ActionResult Index(int id = 777)
         //{
         //    var model = new ArticleModel();
         //    return View(model);
@@ -33,10 +33,10 @@ namespace Routes.Controllers
         //    return View(model);
         //}
 
-        //public ActionResult Index(string id)
-        //{
-        //    var model = new ArticleModel();
-        //    return View(model);
-        //}
+        public ActionResult Index(string id)
+        {
+            var model = new ArticleModel();
+            return View(model);
+        }
     }
 }

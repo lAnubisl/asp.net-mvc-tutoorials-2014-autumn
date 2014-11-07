@@ -23,7 +23,7 @@ namespace Routes.Controllers
             return View(model);
         }
 
-        [Route("ById/{id}")]
+        [Route("ById/{id:int}")]
         public ContentResult ByID(int id)
         {
             return new ContentResult() { Content = "This is a comment #" + id };

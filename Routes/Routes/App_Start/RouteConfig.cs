@@ -15,19 +15,19 @@ namespace Routes
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //routes.MapRoute(
-            //    name: "article",
-            //    url: "article-{seoUrl}",
-            //    defaults: new { controller = "Article", action = "GetByUrl", seoUrl = string.Empty }
-            //);
+            routes.MapRoute(
+                name: "article",
+                url: "article-{seoUrl}",
+                defaults: new { controller = "Article", action = "GetByUrl", seoUrl = string.Empty }
+            );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
                 , namespaces: Namespaces
-                //, constraints : new {id = @"(\d+)?"}
             );
+
         }
     }
 }
