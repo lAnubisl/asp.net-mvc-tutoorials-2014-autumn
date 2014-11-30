@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Routing;
 using System.Web.Security;
@@ -14,13 +15,7 @@ namespace Authentication
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
         {
-            if (HttpContext.Current.User != null && HttpContext.Current.User.Identity.IsAuthenticated)
-            {
-                var identity = HttpContext.Current.User.Identity as FormsIdentity;
-                if (identity != null)
-                {
-                }
-            }
+            //...
         }
     }
 }
