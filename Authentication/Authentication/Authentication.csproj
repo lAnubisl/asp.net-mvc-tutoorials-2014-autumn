@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CurrentUserService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -82,8 +83,11 @@
     <Compile Include="Models\ArticleModel.cs" />
     <Compile Include="Models\CommentItemModel.cs" />
     <Compile Include="Models\PostModel.cs" />
+    <Compile Include="MyAuthorizeAttribte.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CommentsRepository.cs" />
+    <Compile Include="UserAccount.cs" />
+    <Compile Include="UserAccountDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\reset.css" />
@@ -118,7 +122,10 @@
     <Content Include="Views\Home\AddComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\azure.pubxml" />
     <None Include="Properties\PublishProfiles\blog-2014.pubxml" />
+    <None Include="Properties\PublishProfiles\localPublish.pubxml" />
+    <None Include="Properties\PublishProfiles\test-blog-2014-bsuir.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
