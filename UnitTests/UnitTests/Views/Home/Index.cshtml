@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+@model ICollection<UnitTests.Models.PostItemViewModel>
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>View</title>
+    </head>
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Summary</th>
+                    <th>Date Created</th>
+                    <th>Comments count</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.Summary</td>
+                        <td>@item.DateCreated</td>
+                        <td>@item.CommentsCount</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </body>
+</html>
